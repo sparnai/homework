@@ -39,5 +39,13 @@ public class WeatherExternalResponse {
     	this.version = version;
     }
     
+    @Override 
+    public String toString () {
+    	if (error == null)
+        	return "Error is null";
+    	else
+    		return error.toString();
+    }
+    
 }
 

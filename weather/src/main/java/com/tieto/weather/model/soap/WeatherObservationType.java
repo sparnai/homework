@@ -231,6 +231,19 @@ public class WeatherObservationType extends WeatherObservation {
         this.time = value;
     }
 
+    @Override
+    public boolean isEmpty () {
+    	return 
+    		(location == null) &&
+    		(windDirection == null) &&
+    		(wind == null) &&
+    		(weather == null) &&
+    		(humidity == null) &&
+    		(temperature == null) &&
+    		(time == null)
+    	;
+    }
+    
 	@Override
 	public String toString() {
     	return 

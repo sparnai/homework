@@ -36,4 +36,9 @@ public class WeatherExternalError extends WeatherErrorAbstraction {
         this.description = description;
     }
 	
+	@Override 
+	public String toString () {
+		return "[type=" + type + ", description=" + description + "]";
+	}
+	
 }

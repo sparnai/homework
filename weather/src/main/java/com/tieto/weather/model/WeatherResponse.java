@@ -32,4 +32,5 @@ public abstract class WeatherResponse<O extends WeatherObservation, E extends We
 	public abstract void addObservation (WeatherObservation observation);
 	public abstract void addError (WeatherError error);	
 	public abstract void addError (String params, WeatherErrorAbstraction error);
+	
 }

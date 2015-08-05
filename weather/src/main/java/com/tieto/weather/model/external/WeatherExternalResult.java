@@ -22,6 +22,7 @@ public class WeatherExternalResult {
 	
 	public WeatherExternalResult () {
 		response = new WeatherExternalResponse ();
+		observation = new WeatherExternalObservation ();
 	}
 	
     public WeatherObservation getObservation () {
@@ -57,7 +58,7 @@ public class WeatherExternalResult {
     	if (observation == null)
     		return "Observation is null";
     	else 
-    		return observation.toString();
+    		return observation.toString() + response.toString(); 
     }
     
 }

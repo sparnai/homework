@@ -27,25 +27,30 @@ public class WeatherUndergroundClient implements WeatherProviderClient {
      */
     @Override
     public WeatherExternalResult getWeather (final String city) {
-		WeatherExternalResult result = new WeatherExternalResult ();
-		//RestTemplate restTemplate = new RestTemplate();
+		WeatherExternalResult result = null;
 		
 		try {
 			log.info("Trying to get data from external source for city - " + city);
 			result = restTemplate.getForObject(WUNDERGROUND_URL + city + ".json", WeatherExternalResult.class);
 		} catch (RestClientException e) {
 			log.error(e.toString());
+			result = new WeatherExternalResult();
 			result.setError(new WeatherExternalError ("error", e.toString()));
 			return result;
 		}
 		
-		if (result.getObservation() == null) {
-			log.info("External response was null");
-			result.setError(new WeatherExternalError ("error", "Response from external client returned no weather observation data"));
-		}
+		if (result == null) {
+			log.info("External response was empty");
+			result = new WeatherExternalResult();
+			result.setError(new WeatherExternalError ("error", "Response from external client returned no data"));
+		}	
 		
 		if (result.hasErrors())
 			log.error ("Houston, errors found. Wunderground service error description='" + result.getError().getDescription() + "'");
+		else if (result.getObservation().isEmpty()) {
+			log.error("External response has no observation data");
+			result.setError(new WeatherExternalError ("error", "Response from external client returned no weather observation data"));
+		}
 		
 		return result;
     

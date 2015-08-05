@@ -96,6 +96,19 @@ public class WeatherRESTObservation extends WeatherObservation {
     } 
     
     @Override
+    public boolean isEmpty () {
+    	return 
+    		(location == null) &&
+    		(windDirection == null) &&
+    		(wind == null) &&
+    		(weather == null) &&
+    		(humidity == null) &&
+    		(temperature == null) &&
+    		(time == null)
+    	;
+    }
+    
+    @Override
     public String toString () {
     	return 
     			"[time=" + time + 

@@ -41,6 +41,8 @@ public abstract class WeatherObservation {
     public abstract String getTime();
     public abstract void setTime(String time);
     
+    public abstract boolean isEmpty ();
+    
     public abstract String toString ();
     
 }
