@@ -7,6 +7,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 //import com.tieto.weather.model.*;
 
+/**
+ * @Author AL 
+ */
+
 @SpringBootApplication
 public class WeatherApplication {
 //implements CommandLineRunner  {
