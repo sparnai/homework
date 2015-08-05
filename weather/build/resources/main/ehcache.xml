@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+	<!-- hold cache only for 3 hours -->
+	<cache name="citiesCache" maxElementsInMemory="50"
+		eternal="false" overflowToDisk="false" memoryStoreEvictionPolicy="LFU"
+		timeToIdleSeconds="0" timeToLiveSeconds="10800" />
+
+</ehcache>
