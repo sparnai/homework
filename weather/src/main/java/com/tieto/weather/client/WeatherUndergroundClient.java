@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,13 +19,16 @@ public class WeatherUndergroundClient implements WeatherProviderClient {
 
 	private static final Logger log = LoggerFactory.getLogger(WeatherUndergroundClient.class);
 	
+	@Resource
+	private RestTemplate restTemplate;
+	
     /**
      * {@inheritDoc}
      */
     @Override
     public WeatherExternalResult getWeather (final String city) {
 		WeatherExternalResult result = new WeatherExternalResult ();
-		RestTemplate restTemplate = new RestTemplate();
+		//RestTemplate restTemplate = new RestTemplate();
 		
 		try {
 			log.info("Trying to get data from external source for city - " + city);

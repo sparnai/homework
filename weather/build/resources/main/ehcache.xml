@@ -2,8 +2,6 @@
 <ehcache>
 
 	<!-- hold cache only for 3 hours -->
-	<cache name="citiesCache" maxElementsInMemory="50"
-		eternal="false" overflowToDisk="false" memoryStoreEvictionPolicy="LFU"
-		timeToIdleSeconds="0" timeToLiveSeconds="10800" />
+	<cache name="citiesCache" maxElementsInMemory="100" overflowToDisk="false" timeToIdleSeconds="0" timeToLiveSeconds="10800" />
 
 </ehcache>
