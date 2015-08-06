@@ -16,6 +16,9 @@ import com.tieto.weather.model.WeatherObservation;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherRESTObservation extends WeatherObservation {
 
+	public WeatherRESTObservation() {
+	}
+	
 	public WeatherRESTObservation(WeatherObservation observation) {
 		
 		this.humidity = observation.getHumidity();

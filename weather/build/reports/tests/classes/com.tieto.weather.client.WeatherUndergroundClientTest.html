@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.tieto.weather.client.WeatherUndergroundClientTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.tieto.weather.client.WeatherUndergroundClientTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.tieto.weather.client.html">com.tieto.weather.client</a> &gt; WeatherUndergroundClientTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.221s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testGetWeatherBadCity</td>
+<td>0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetWeatherNoContent</td>
+<td>0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetWeatherNormal</td>
+<td>0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetWeatherServerError</td>
+<td>0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetWeatherStrangeCity</td>
+<td>0.208s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>10:18:36.458 [Test worker] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.tieto.weather.client.WeatherUndergroundClientTest].
+10:18:36.475 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+10:18:36.480 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+10:18:36.488 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.tieto.weather.client.WeatherUndergroundClientTest] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+10:18:36.504 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@6baf5a44 declaringClass = 'com.tieto.weather.WeatherBaseTest', classes = '{class com.tieto.weather.WeatherApplication}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+10:18:36.511 [Test worker] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.514 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [com.tieto.weather.client.WeatherUndergroundClientTest]: using defaults.
+10:18:36.522 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+10:18:36.539 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5aa4369b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@71475f84, org.springframework.test.context.support.DirtiesContextTestExecutionListener@510395de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4ad66ded, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@313d8ac2]
+10:18:36.541 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.542 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.544 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.545 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.546 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.546 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.549 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@3d96563f testClass = WeatherUndergroundClientTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@7b5a2a3f testClass = WeatherUndergroundClientTest, locations = '{}', classes = '{class com.tieto.weather.WeatherApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]], class annotated with @DirtiesContext [true] with mode [AFTER_CLASS].
+10:18:36.550 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.550 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.tieto.weather.client.WeatherUndergroundClientTest]
+10:18:36.552 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@3d96563f testClass = WeatherUndergroundClientTest, testInstance = com.tieto.weather.client.WeatherUndergroundClientTest@78c45270, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@7b5a2a3f testClass = WeatherUndergroundClientTest, locations = '{}', classes = '{class com.tieto.weather.WeatherApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
+10:18:36.647 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+10:18:36.649 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+10:18:36.650 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+10:18:36.651 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::             (v1.3.0.M2)
+
+2015-08-06 10:18:36.901  INFO 936 --- [    Test worker] c.t.w.c.WeatherUndergroundClientTest     : Starting WeatherUndergroundClientTest on Pantera with PID 936 (D:\GitRepository\weather\build\classes\test started by Inspiron in D:\GitRepository\weather)
+2015-08-06 10:18:36.934  INFO 936 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4de9cac9: startup date [Thu Aug 06 10:18:36 EEST 2015]; root of context hierarchy
+2015-08-06 10:18:38.368  INFO 936 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'weatherSOAPConfiguration' of type [class com.tieto.weather.configuration.WeatherSOAPConfiguration$$EnhancerBySpringCGLIB$$3362994] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-06 10:18:38.401  INFO 936 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$534baa55] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-06 10:18:38.449  INFO 936 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2015-08-06 10:18:39.642  INFO 936 --- [    Test worker] c.t.w.s.repository.WeatherCitiesImpl     : Initialize supported cities
+2015-08-06 10:18:40.767  INFO 936 --- [    Test worker] c.t.w.c.WeatherUndergroundClientTest     : Started WeatherUndergroundClientTest in 4.112 seconds (JVM running for 5.102)
+2015-08-06 10:18:40.815  INFO 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Trying to get data from external source for city - London
+2015-08-06 10:18:40.989 ERROR 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : External response has no observation data
+2015-08-06 10:18:40.992  INFO 936 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : 'Advicing' LONDON city. Counting popularity.
+2015-08-06 10:18:40.992  INFO 936 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : Counting London popularity. Current count: 1. Left to become popular (if name is suitable, of course): 2
+2015-08-06 10:18:40.995  INFO 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Trying to get data from external source for city - Vilnius
+2015-08-06 10:18:40.996  INFO 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : External response was empty
+2015-08-06 10:18:40.996 ERROR 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Houston, errors found. Wunderground service error description='Response from external client returned no data'
+2015-08-06 10:18:40.996  INFO 936 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : 'Advicing' VILNIUS city. Counting popularity.
+2015-08-06 10:18:40.998  INFO 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Trying to get data from external source for city - Vilnius
+2015-08-06 10:18:41.001  INFO 936 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : 'Advicing' VILNIUS city. Counting popularity.
+2015-08-06 10:18:41.004  INFO 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Trying to get data from external source for city - Vilnius
+2015-08-06 10:18:41.005 ERROR 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : org.springframework.web.client.HttpServerErrorException: 500 Internal Server Error
+2015-08-06 10:18:41.005  INFO 936 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : 'Advicing' VILNIUS city. Counting popularity.
+2015-08-06 10:18:41.008  INFO 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Trying to get data from external source for city - Bliamba
+2015-08-06 10:18:41.009 ERROR 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Houston, errors found. Wunderground service error description='No cities match your search query'
+2015-08-06 10:18:41.010  INFO 936 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : 'Advicing' BLIAMBA city. Counting popularity.
+2015-08-06 10:18:41.010  INFO 936 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : Counting Bliamba popularity. Current count: 1. Left to become popular (if name is suitable, of course): 2
+2015-08-06 10:18:41.011  INFO 936 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4de9cac9: startup date [Thu Aug 06 10:18:36 EEST 2015]; root of context hierarchy
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>Generated by 
+<a href="http://www.gradle.org">Gradle 2.2.1</a> at Aug 6, 2015 10:18:46 AM</p>
+</div>
+</div>
+</body>

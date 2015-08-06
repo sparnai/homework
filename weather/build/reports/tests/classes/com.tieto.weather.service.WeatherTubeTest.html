@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.tieto.weather.service.WeatherTubeTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.tieto.weather.service.WeatherTubeTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.tieto.weather.service.html">com.tieto.weather.service</a> &gt; WeatherTubeTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.007s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testGetWeatherNormal</td>
+<td>0.007s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2015-08-06 10:18:44.707  INFO 936 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-08-06 10:18:44.707  INFO 936 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@61ca1f39, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5e4e6f88, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7d8ecc8f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@659410ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5416f8f2]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::             (v1.3.0.M2)
+
+2015-08-06 10:18:44.737  INFO 936 --- [    Test worker] c.tieto.weather.service.WeatherTubeTest  : Starting WeatherTubeTest on Pantera with PID 936 (D:\GitRepository\weather\build\classes\test started by Inspiron in D:\GitRepository\weather)
+2015-08-06 10:18:44.737  INFO 936 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@24c2361b: startup date [Thu Aug 06 10:18:44 EEST 2015]; root of context hierarchy
+2015-08-06 10:18:45.104  INFO 936 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'weatherSOAPConfiguration' of type [class com.tieto.weather.configuration.WeatherSOAPConfiguration$$EnhancerBySpringCGLIB$$3362994] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-06 10:18:45.105  INFO 936 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$534baa55] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-06 10:18:45.111  INFO 936 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2015-08-06 10:18:45.193  INFO 936 --- [    Test worker] c.t.w.s.repository.WeatherCitiesImpl     : Initialize supported cities
+2015-08-06 10:18:45.590  INFO 936 --- [    Test worker] c.tieto.weather.service.WeatherTubeTest  : Started WeatherTubeTest in 0.873 seconds (JVM running for 9.924)
+2015-08-06 10:18:45.594  INFO 936 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube found that VILNIUS is supported. Trying to get observation from cache.
+2015-08-06 10:18:45.595  INFO 936 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube found that VILNIUS is not supported or not cached. Trying to get observation external client.
+2015-08-06 10:18:45.595  INFO 936 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Trying to get data from external source for city - VILNIUS
+2015-08-06 10:18:45.599  INFO 936 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : 'Advicing' VILNIUS city. Counting popularity.
+2015-08-06 10:18:45.599  INFO 936 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube got weather observation from external client - weather - Clear
+2015-08-06 10:18:45.601  INFO 936 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@24c2361b: startup date [Thu Aug 06 10:18:44 EEST 2015]; root of context hierarchy
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>Generated by 
+<a href="http://www.gradle.org">Gradle 2.2.1</a> at Aug 6, 2015 10:18:46 AM</p>
+</div>
+</div>
+</body>

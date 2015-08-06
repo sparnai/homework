@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tieto.weather.service.repository.WeatherCitiesImplTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-08-06T07:18:46" hostname="Pantera" time="0.002">
+  <properties/>
+  <testcase name="testIsCitySupported" classname="com.tieto.weather.service.repository.WeatherCitiesImplTest" time="0.001"/>
+  <testcase name="testCountPopularity" classname="com.tieto.weather.service.repository.WeatherCitiesImplTest" time="0.001"/>
+  <system-out><![CDATA[2015-08-06 10:18:45.608  INFO 936 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-08-06 10:18:45.609  INFO 936 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5e789655, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@32e06803, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3500124d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@113bc92, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1b4358db]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::             (v1.3.0.M2)
+
+2015-08-06 10:18:45.639  INFO 936 --- [    Test worker] c.t.w.s.r.WeatherCitiesImplTest          : Starting WeatherCitiesImplTest on Pantera with PID 936 (D:\GitRepository\weather\build\classes\test started by Inspiron in D:\GitRepository\weather)
+2015-08-06 10:18:45.641  INFO 936 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@307de5f3: startup date [Thu Aug 06 10:18:45 EEST 2015]; root of context hierarchy
+2015-08-06 10:18:45.997  INFO 936 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'weatherSOAPConfiguration' of type [class com.tieto.weather.configuration.WeatherSOAPConfiguration$$EnhancerBySpringCGLIB$$3362994] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-06 10:18:45.998  INFO 936 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$534baa55] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-06 10:18:46.000  INFO 936 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2015-08-06 10:18:46.059  INFO 936 --- [    Test worker] c.t.w.s.repository.WeatherCitiesImpl     : Initialize supported cities
+2015-08-06 10:18:46.243  INFO 936 --- [    Test worker] c.t.w.s.r.WeatherCitiesImplTest          : Started WeatherCitiesImplTest in 0.629 seconds (JVM running for 10.577)
+2015-08-06 10:18:46.248  INFO 936 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@307de5f3: startup date [Thu Aug 06 10:18:45 EEST 2015]; root of context hierarchy
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
