@@ -1,14 +1,19 @@
 package com.tieto.weather.model;
 
+/**
+ * @author AL
+ * Error message, used by SOAP and REST endpoints.
+ * 
+ */
 public class WeatherError extends WeatherErrorAbstraction {
+	
+	protected String type;
+	protected String description;
 	
 	// We need an additional parameter here
 	protected String params;
 	
-	public WeatherError (String params, String type, String description) {
-		this.params = params;
-		this.type = type;
-		this.description = description;
+	public WeatherError () {
 	}
 	
 	public WeatherError (String params, WeatherErrorAbstraction error) {
@@ -25,18 +30,22 @@ public class WeatherError extends WeatherErrorAbstraction {
 		this.params = params;
 	}
 	
+	@Override
 	public String getType () {
 		return type;
 	}
 	
+	@Override
 	public void setType (String type) {
 		this.type = type;
 	}
 	
+	@Override
 	public String getDescription() {
 		return description;
 	}
 	
+	@Override
 	public void setDescription (String description) {
 		this.description = description;
 	}

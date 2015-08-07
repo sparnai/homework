@@ -10,7 +10,6 @@ import com.tieto.weather.model.WeatherObservation;
  * DTO class for deserializing external service (Wunderground) response data.
  * 
  */
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherExternalResult {
 	
@@ -42,7 +41,10 @@ public class WeatherExternalResult {
     }
     
     public boolean hasErrors() {
-    	return (response==null)||(response.hasErrors()) || (observation == null);
+    	return 
+    		(response==null) || 
+    		(response.hasErrors()) ||
+    		(observation == null);
     }
     
     public WeatherErrorAbstraction getError() {

@@ -43,14 +43,6 @@ public class WeatherController {
     	
     }
 
-    /*
-    @ResponseBody
-    @RequestMapping(value = "/{city}", method = RequestMethod.GET, headers = HEADER)
-    public WeatherResponse getWeather(@PathVariable final String city) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    */
-
     /**
      * Endpoint for fetching single location weather data.
      *
@@ -64,18 +56,6 @@ public class WeatherController {
 		
 		return tube.getWeather(city, new WeatherRESTResponse());
 		
-		/*
-    	WeatherObservation observation = new WeatherRESTObservation();
-    	
-    	if (city != null) {
-    		observation = new WeatherUndergroundClient().getWeather(city).getObservation();
-    		//observation = RepositoryServiceImpl.getWeather(city);
-    		//return repository.getWeather(city);
-    	}
-    	/*
-    	else
-    		return new WeatherObservation();
-    	*/
 	}
 
 }

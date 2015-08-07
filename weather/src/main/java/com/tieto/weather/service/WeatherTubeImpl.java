@@ -21,7 +21,6 @@ import org.slf4j.LoggerFactory;
  * Main Weather Tube class. Gets weather information from external sources and cache and passes onto REST or SOAP endpoints.
  * 
  */
-
 @Service
 public class WeatherTubeImpl implements WeatherTube{
 	
@@ -106,9 +105,5 @@ public class WeatherTubeImpl implements WeatherTube{
     	
     	return responseObject;
     }       
-    
-    public void Test () {
-    	System.out.println("VVVVVVV");
-    }
 
 }

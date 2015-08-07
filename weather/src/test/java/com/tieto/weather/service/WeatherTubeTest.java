@@ -9,28 +9,22 @@ import com.tieto.weather.WeatherBaseTest;
 import static org.junit.Assert.*;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withNoContent;
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withServerError;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
+import java.util.Optional;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.test.web.client.ResponseActions;
 import org.springframework.web.client.RestTemplate;
 
-import com.tieto.weather.WeatherBaseTest;
 import com.tieto.weather.client.WeatherProviderClient;
-import com.tieto.weather.model.WeatherObservation;
-import com.tieto.weather.model.external.WeatherExternalResult;
+import com.tieto.weather.model.rest.WeatherRESTObservation;
 import com.tieto.weather.model.rest.WeatherRESTResponse;
+import com.tieto.weather.model.soap.WeatherObservationType;
 import com.tieto.weather.model.soap.WeatherSOAPResponse;
 
 public class WeatherTubeTest extends WeatherBaseTest {
@@ -57,18 +51,25 @@ public class WeatherTubeTest extends WeatherBaseTest {
 	// Normal response
 	public void testGetWeatherNormal()  throws Exception {
 		String testCity = "Vilnius";
-		String expectedResponse = "[[time=Wed, 05 Aug 2015 10:35:59 +0300 temperature=26, weather=Clear, humidity=54%, windDirection=South, wind=From the South at 5 MPH]]";
 		
-		mockServer(testCity).andRespond(withSuccess(new ClassPathResource("WeatherUndergroundResponse.json"), MediaType.APPLICATION_JSON));
+		mockServer(testCity).andRespond(withSuccess(new ClassPathResource(MOCK_CLIENT_RESPONSE_VILNIUS), MediaType.APPLICATION_JSON));
 		
 		WeatherRESTResponse responseREST = tube.getWeather(testCity, new WeatherRESTResponse());
-		//WeatherSOAPResponse responseSOAP = tube.getWeather(testCity, new WeatherSOAPResponse());
+		WeatherSOAPResponse responseSOAP = tube.getWeather(testCity, new WeatherSOAPResponse());
 		
 		assertNotNull(responseREST);
-		//assertNotNull(responseSOAP);
+		assertNotNull(responseREST.getObservations());
+		assertEquals(1, responseREST.getObservations().size());
+
+		assertNotNull(responseSOAP);
+		assertNotNull(responseSOAP.getObservations());
+		assertEquals(1, responseSOAP.getObservations().size());
+
+		Optional<WeatherRESTObservation> firstRESTElement = responseREST.getObservations().stream().findFirst();
+		Optional<WeatherObservationType> firstSOAPElement = responseSOAP.getObservations().stream().findFirst();
 		
-		assertEquals(expectedResponse, responseREST.getObservations().toString());
-		//assertEquals(expectedResponse, responseSOAP.getObservations().toString());
+		checkMockVilniusObservation (firstRESTElement.get());
+		checkMockVilniusObservation (firstSOAPElement.get());
 		
 		mockServer.verify();
 	}

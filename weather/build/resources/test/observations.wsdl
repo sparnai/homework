@@ -1,0 +1,59 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://tieto.com/weather/schemas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tieto.com/weather/schemas" targetNamespace="http://tieto.com/weather/schemas">
+<wsdl:types>
+<xs:schema xmlns:weather="http://tieto.com/weather/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://tieto.com/weather/schemas">
+<xs:element name="WeatherRequest">
+<xs:complexType>
+<xs:sequence maxOccurs="unbounded">
+<xs:element name="city" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="WeatherResponse">
+<xs:complexType>
+<xs:sequence maxOccurs="unbounded">
+<xs:element name="weatherObservation" type="weather:WeatherObservationType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:complexType name="WeatherObservationType">
+<xs:sequence>
+<xs:element name="location" type="xs:string"/>
+<xs:element name="relative_humidity" type="xs:string"/>
+<xs:element name="temp_c" type="xs:double"/>
+<xs:element name="weather" type="xs:string"/>
+<xs:element name="wind_dir" type="xs:string"/>
+<xs:element name="wind_string" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="WeatherRequest">
+<wsdl:part element="tns:WeatherRequest" name="WeatherRequest"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="WeatherResponse">
+<wsdl:part element="tns:WeatherResponse" name="WeatherResponse"></wsdl:part>
+</wsdl:message>
+<wsdl:portType name="WeatherRequest">
+<wsdl:operation name="Weather">
+<wsdl:input message="tns:WeatherRequest" name="WeatherRequest"></wsdl:input>
+<wsdl:output message="tns:WeatherResponse" name="WeatherResponse"></wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="WeatherRequestSoap11" type="tns:WeatherRequest">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Weather">
+<soap:operation soapAction=""/>
+<wsdl:input name="WeatherRequest">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="WeatherResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="WeatherRequestService">
+<wsdl:port binding="tns:WeatherRequestSoap11" name="WeatherRequestSoap11">
+<soap:address location="http://localhost:9999/ws"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

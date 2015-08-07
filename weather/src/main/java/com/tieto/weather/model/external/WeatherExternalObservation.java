@@ -10,11 +10,18 @@ import com.tieto.weather.model.WeatherObservation;
  * DTO class for deserializing external service (Wunderground) response's location data.
  * 
  */
-
 @JsonRootName(value = "current_observation")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherExternalObservation extends WeatherObservation {
 
+	protected String location;
+    protected String temperature;
+    protected String humidity;
+    protected String weather;
+    protected String windDirection;
+    protected String wind;
+    protected String time;
+	
     @JsonProperty(value = "display_location")
     private WeatherExternalLocation displayLocation;
     
@@ -103,7 +110,7 @@ public class WeatherExternalObservation extends WeatherObservation {
     public void setTime(String time) {
         this.time = time;
     } 
-    
+    /*
     @Override
     public boolean isEmpty () {
     	return 
@@ -121,12 +128,14 @@ public class WeatherExternalObservation extends WeatherObservation {
     public String toString () {
     	return 
     			"[time=" + time + 
-    			" temperature=" + temperature + 
+    			", location=" + location +
+    			", temperature=" + temperature + 
     			", weather=" + weather + 
     			", humidity=" + humidity + 
     			", windDirection=" + windDirection +
     			", wind=" + wind + 
     			"]"; 
     }
+    */
     
 }

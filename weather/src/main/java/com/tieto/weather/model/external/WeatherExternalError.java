@@ -8,6 +8,9 @@ import com.tieto.weather.model.WeatherErrorAbstraction;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherExternalError extends WeatherErrorAbstraction {
 	
+	protected String type;
+	protected String description;
+	
 	public WeatherExternalError () {
 	}
 	

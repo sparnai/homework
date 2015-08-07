@@ -12,7 +12,7 @@ import com.tieto.weather.model.WeatherResponse;
 public interface WeatherTube {
 	
     /**
-     * Processes city weather - gets data from cache or from external client if neccesary. Handles cache updates.
+     * Processes city weather - gets data from cache or from external client if necessary. Handles cache updates.
      */
 	public <T extends WeatherResponse> void processCity (final String city, T responseObject);
 	
@@ -32,6 +32,4 @@ public interface WeatherTube {
      */
     public <T extends WeatherResponse> T getWeather(T responseObject);
     
-    public void Test ();
-
 }

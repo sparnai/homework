@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  * Dummy class for deserializing external service (Wunderground) response's location data.
  * 
  */
-
 @JsonRootName(value = "display_location")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherExternalLocation {

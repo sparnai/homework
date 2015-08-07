@@ -3,9 +3,7 @@ package com.tieto.weather.client;
 import com.tieto.weather.model.external.WeatherExternalError;
 import com.tieto.weather.model.external.WeatherExternalResult;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 

@@ -22,7 +22,6 @@ import org.springframework.test.web.client.ResponseActions;
 import org.springframework.web.client.RestTemplate;
 
 import com.tieto.weather.WeatherBaseTest;
-import com.tieto.weather.model.WeatherObservation;
 import com.tieto.weather.model.external.WeatherExternalResult;
 
 public class WeatherUndergroundClientTest extends WeatherBaseTest {
@@ -51,21 +50,14 @@ public class WeatherUndergroundClientTest extends WeatherBaseTest {
 	public void testGetWeatherNormal()  throws Exception {
 		String testCity = "Vilnius";
 		
-		mockServer(testCity).andRespond(withSuccess(new ClassPathResource("WeatherUndergroundResponse.json"), MediaType.APPLICATION_JSON));
+		mockServer(testCity).andRespond(withSuccess(new ClassPathResource(MOCK_CLIENT_RESPONSE_VILNIUS), MediaType.APPLICATION_JSON));
 		
 		WeatherExternalResult result = client.getWeather(testCity);
 		
 		assertNotNull(result);
 		assertNotNull(result.getObservation());
 		
-		WeatherObservation observation = result.getObservation();
-		assertEquals("Vilnius, Lithuania",  observation.getLocation());
-		assertEquals("26", observation.getTemperature());
-		assertEquals("54%", observation.getHumidity());
-		assertEquals("Clear", observation.getWeather());
-		assertEquals("From the South at 5 MPH", observation.getWind());
-		assertEquals("South", observation.getWindDirection());
-		assertEquals("Wed, 05 Aug 2015 10:35:59 +0300", observation.getTime());
+		checkMockVilniusObservation (result.getObservation());
 		
 		mockServer.verify();
 	}
@@ -75,7 +67,7 @@ public class WeatherUndergroundClientTest extends WeatherBaseTest {
 	public void testGetWeatherBadCity()  throws Exception {
 		String testCity = "Bliamba";
 		
-		mockServer(testCity).andRespond(withSuccess(new ClassPathResource("WeatherUndergroundBadCityResponse.json"), MediaType.APPLICATION_JSON));
+		mockServer(testCity).andRespond(withSuccess(new ClassPathResource(MOCK_CLIENT_RESPONSE_BAD_CITY), MediaType.APPLICATION_JSON));
 		
 		WeatherExternalResult result = client.getWeather(testCity);
 		
@@ -93,29 +85,22 @@ public class WeatherUndergroundClientTest extends WeatherBaseTest {
 	public void testGetWeatherStrangeCity()  throws Exception {
 		String testCity = "London";
 		
-		mockServer(testCity).andRespond(withSuccess(new ClassPathResource("WeatherUndergroundStrangeCityResponse.json"), MediaType.APPLICATION_JSON));
+		mockServer(testCity).andRespond(withSuccess(new ClassPathResource(MOCK_CLIENT_RESPONSE_STRANGE_CITY), MediaType.APPLICATION_JSON));
 		
 		WeatherExternalResult result = client.getWeather(testCity);
 		
 		// Result still has to be returned from external client, but with error messages. 
 		assertNotNull(result);
-
-		assertEquals("error", result.getError().getType());
-		assertEquals("Response from external client returned no weather observation data", result.getError().getDescription());
+		checkMockStrangeCityErrors (result.getError());
 		
 		mockServer.verify();
 	}
-	
 	
 	@Test
 	// Now, what if server returned... nothing at all
 	public void testGetWeatherNoContent() throws Exception {
 		String testCity = "Vilnius";
 
-		Collection<String> validErrorMessages = new ArrayList<String>();
-		validErrorMessages.add("Response from external client returned no weather observation data");
-		validErrorMessages.add("Response from external client returned no data");
-		
 		mockServer(testCity).andRespond(withNoContent());
 
 		WeatherExternalResult result = client.getWeather(testCity);
@@ -123,7 +108,7 @@ public class WeatherUndergroundClientTest extends WeatherBaseTest {
 		// Result still has to be returned from external client, but with error messages. 
 		assertNotNull(result);
 
-		assertTrue(validErrorMessages.contains(result.getError().getDescription()) );
+		checkMockNoContentErrors (result.getError());
 		
 		mockServer.verify();
 	}

@@ -15,6 +15,7 @@ import org.springframework.xml.xsd.XsdSchema;
 @EnableWs
 @Configuration
 public class WeatherSOAPConfiguration extends WsConfigurerAdapter {
+	
 	@Bean
 	public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
@@ -26,7 +27,7 @@ public class WeatherSOAPConfiguration extends WsConfigurerAdapter {
 	@Bean(name = "observations")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema observationsSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("WeatherRequest");
+		wsdl11Definition.setPortTypeName("WeatherPort");
 		wsdl11Definition.setLocationUri("/ws");
 		wsdl11Definition.setTargetNamespace("http://tieto.com/weather/schemas");
 		wsdl11Definition.setSchema(observationsSchema);

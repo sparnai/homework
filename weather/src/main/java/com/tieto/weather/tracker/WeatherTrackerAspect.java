@@ -4,7 +4,6 @@ import javax.annotation.Resource;
 
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
@@ -45,31 +44,6 @@ public class WeatherTrackerAspect {
 	
 	@Pointcut("execution(public * com.tieto.weather.client.WeatherProviderClient.getWeather(..)) && args(city)")
 		public void processCityPointcut(String city) {}
-	
-/*	
-	@Before("processCityPointcut(city)")
-	public void countCityPopularity (String city) { 
-
-		String trimmedCity = city.trim().toUpperCase();
-		
-		log.info("Tracking city by aspect");
-		
-		// If not already supported/popular
-		if (!cities.isCitySupported (trimmedCity)) {
-			int currentCount = cities.getCityPopularity(trimmedCity);
-			
-			log.info("Tracking city " + city + ". Current count: " + currentCount + ". Left to become popular: " + (WeatherCities.THIS_IS_POPULAR - currentCount));
-			
-			// Only if city name is suitable it is transfered to supported/popular cities
-			if ((currentCount + 1 >= WeatherCities.THIS_IS_POPULAR)) {// && (isCityNameSuitable(trimmedCity))) {
-				log.info("Tracker adding new city to supported cities: " + trimmedCity);
-				cities.addSupportedCity(trimmedCity);
-			}
-			else
-				cities.countPopularity (city, currentCount + 1);
-		}
-	}
-	*/
 	
     @AfterReturning(pointcut = "processCityPointcut(city)", returning="result")
 	public void countCityPopularityAfter (String city,  WeatherExternalResult result) { 

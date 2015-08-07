@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  * A dummy DTO class for deserializing external service (Wunderground) response data.
  * 
  */
-
 @JsonRootName(value = "response")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherExternalResponse {
@@ -42,9 +41,9 @@ public class WeatherExternalResponse {
     @Override 
     public String toString () {
     	if (error == null)
-        	return "Error is null";
+        	return "[version = " + version + ", error is null]";
     	else
-    		return error.toString();
+    		return "[version = " + version + "]" + error.toString();
     }
     
 }

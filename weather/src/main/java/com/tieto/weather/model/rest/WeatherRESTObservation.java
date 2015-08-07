@@ -16,6 +16,14 @@ import com.tieto.weather.model.WeatherObservation;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherRESTObservation extends WeatherObservation {
 
+	protected String location;
+    protected String temperature;
+    protected String humidity;
+    protected String weather;
+    protected String windDirection;
+    protected String wind;
+    protected String time;
+	
 	public WeatherRESTObservation() {
 	}
 	
@@ -30,10 +38,12 @@ public class WeatherRESTObservation extends WeatherObservation {
 		this.windDirection = observation.getWindDirection();
 	}
 	
+	@Override
     public String getLocation() {
         return location;
     }
 
+	@Override
     public void setLocation(String location) {
         this.location = location;
     }
@@ -97,30 +107,5 @@ public class WeatherRESTObservation extends WeatherObservation {
     public void setTime(String time) {
         this.time = time;
     } 
-    
-    @Override
-    public boolean isEmpty () {
-    	return 
-    		(location == null) &&
-    		(windDirection == null) &&
-    		(wind == null) &&
-    		(weather == null) &&
-    		(humidity == null) &&
-    		(temperature == null) &&
-    		(time == null)
-    	;
-    }
-    
-    @Override
-    public String toString () {
-    	return 
-    			"[time=" + time + 
-    			" temperature=" + temperature + 
-    			", weather=" + weather + 
-    			", humidity=" + humidity + 
-    			", windDirection=" + windDirection +
-    			", wind=" + wind + 
-    			"]"; 
-    }
     
 }

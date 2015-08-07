@@ -14,20 +14,44 @@
 
     <xs:element name="WeatherResponse">
         <xs:complexType>
-            <xs:sequence maxOccurs="unbounded">
-                <xs:element name="weatherObservation" type="weather:WeatherObservationType" />
+        	 <xs:sequence maxOccurs="1">
+        	 
+				<xs:element name="observations">
+  					<xs:complexType>
+    					<xs:sequence maxOccurs="unbounded">
+      						<xs:element name="weatherObservation" type="weather:WeatherObservationType" />
+    					</xs:sequence>
+  					</xs:complexType>
+				</xs:element>
+				
+				<xs:element name="errors">
+  					<xs:complexType>
+    					<xs:sequence maxOccurs="unbounded">
+      						<xs:element name="weatherError" type="weather:WeatherErrorType" />
+    					</xs:sequence>
+  					</xs:complexType>
+				</xs:element>				
+        	 
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
+    
     <xs:complexType name="WeatherObservationType">
         <xs:sequence>
             <xs:element name="location" type="xs:string" />
             <xs:element name="relative_humidity" type="xs:string" />
-            <xs:element name="temp_c" type="xs:double" />
+            <xs:element name="temp_c" type="xs:string" />
             <xs:element name="weather" type="xs:string" />
             <xs:element name="wind_dir" type="xs:string" />
             <xs:element name="wind_string" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+        <xs:complexType name="WeatherErrorType">
+        <xs:sequence>
+            <xs:element name="params" type="xs:string" />
+            <xs:element name="type" type="xs:string" />
+            <xs:element name="description" type="xs:string" />
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

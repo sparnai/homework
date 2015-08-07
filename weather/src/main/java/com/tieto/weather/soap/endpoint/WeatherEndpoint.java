@@ -1,6 +1,5 @@
 package com.tieto.weather.soap.endpoint;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -10,8 +9,8 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.tieto.weather.model.WeatherResponse;
-import com.tieto.weather.model.soap.*;
+import com.tieto.weather.model.soap.WeatherRequest;
+import com.tieto.weather.model.soap.WeatherSOAPResponse;
 import com.tieto.weather.service.WeatherTube;
 
 import org.slf4j.Logger;
@@ -41,8 +40,20 @@ public class WeatherEndpoint {
     public WeatherSOAPResponse getWeather(@RequestPayload final WeatherRequest request) {
 		
     	WeatherSOAPResponse response = new WeatherSOAPResponse();
+
+    	/*
+    	WeatherObservationType observation = new WeatherObservationType();
+
+    	observation.setLocation("Vilnius");
+    	observation.setHumidity("12%");
+    	observation.setTemperature("15C");
+    	observation.setWeather("Clear");
+    	observation.setWindDirection("South");
+    	observation.setWind("Strong wind");
+    	
+    	response.getObservations().add(observation);
+    	*/
 		List<String> cities = request.getCity();
-		//response. .setCountry(countryRepository.findCountry(request.getCity()));
 
     	log.info("SOAP Endpoint - got request");
 		
@@ -53,7 +64,6 @@ public class WeatherEndpoint {
 			log.info("SOAP Endpoint: Got " + cities.size() + " cities.");
 			response = tube.getWeather(cities, response);
 		}
-
 		return response;
     }
 }

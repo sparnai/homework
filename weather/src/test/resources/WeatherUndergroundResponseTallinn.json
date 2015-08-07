@@ -1,0 +1,94 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "conditions": 1
+  }
+	}
+  ,	"current_observation": {
+		"image": {
+		"url":"http://icons.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Tallinn, Estonia",
+		"city":"Tallinn",
+		"state":"",
+		"state_name":"Estonia",
+		"country":"EE",
+		"country_iso3166":"EE",
+		"zip":"00000",
+		"magic":"1",
+		"wmo":"26038",
+		"latitude":"59.40999985",
+		"longitude":"24.82999992",
+		"elevation":"39.00000000"
+		},
+		"observation_location": {
+		"full":"Tallinn, ",
+		"city":"Tallinn",
+		"state":"",
+		"country":"EE",
+		"country_iso3166":"EE",
+		"latitude":"59.41331863",
+		"longitude":"24.83284378",
+		"elevation":"131 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"EETN",
+		"observation_time":"Last Updated on August 7, 10:50 AM EEST",
+		"observation_time_rfc822":"Fri, 07 Aug 2015 10:50:00 +0300",
+		"observation_epoch":"1438933800",
+		"local_time_rfc822":"Fri, 07 Aug 2015 11:20:05 +0300",
+		"local_epoch":"1438935605",
+		"local_tz_short":"EEST",
+		"local_tz_long":"Europe/Tallinn",
+		"local_tz_offset":"+0300",
+		"weather":"Clear",
+		"temperature_string":"68 F (20 C)",
+		"temp_f":68,
+		"temp_c":20,
+		"relative_humidity":"68%",
+		"wind_string":"From the NW at 7 MPH",
+		"wind_dir":"NW",
+		"wind_degrees":320,
+		"wind_mph":7,
+		"wind_gust_mph":0,
+		"wind_kph":11,
+		"wind_gust_kph":0,
+		"pressure_mb":"1020",
+		"pressure_in":"30.12",
+		"pressure_trend":"+",
+		"dewpoint_string":"57 F (14 C)",
+		"dewpoint_f":57,
+		"dewpoint_c":14,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"68 F (20 C)",
+		"feelslike_f":"68",
+		"feelslike_c":"20",
+		"visibility_mi":"N/A",
+		"visibility_km":"N/A",
+		"solarradiation":"--",
+		"UV":"-1","precip_1hr_string":"-9999.00 in (-9999.00 mm)",
+		"precip_1hr_in":"-9999.00",
+		"precip_1hr_metric":"--",
+		"precip_today_string":"0.00 in (0.0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0.0",
+		"icon":"clear",
+		"icon_url":"http://icons.wxug.com/i/c/k/clear.gif",
+		"forecast_url":"http://www.wunderground.com/global/stations/26038.html",
+		"history_url":"http://www.wunderground.com/history/airport/EETN/2015/8/7/DailyHistory.html",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=59.41331863,24.83284378",
+		"nowcast":""
+	}
+}
