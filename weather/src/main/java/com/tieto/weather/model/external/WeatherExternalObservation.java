@@ -110,32 +110,5 @@ public class WeatherExternalObservation extends WeatherObservation {
     public void setTime(String time) {
         this.time = time;
     } 
-    /*
-    @Override
-    public boolean isEmpty () {
-    	return 
-    		(location == null) &&
-    		(windDirection == null) &&
-    		(wind == null) &&
-    		(weather == null) &&
-    		(humidity == null) &&
-    		(temperature == null) &&
-    		(time == null)
-    	;
-    }
-    
-    @Override
-    public String toString () {
-    	return 
-    			"[time=" + time + 
-    			", location=" + location +
-    			", temperature=" + temperature + 
-    			", weather=" + weather + 
-    			", humidity=" + humidity + 
-    			", windDirection=" + windDirection +
-    			", wind=" + wind + 
-    			"]"; 
-    }
-    */
     
 }

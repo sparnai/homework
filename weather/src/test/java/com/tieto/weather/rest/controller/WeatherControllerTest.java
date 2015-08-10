@@ -6,20 +6,13 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withServerError;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.*;
 
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.Collection;
 import java.util.Optional;
 
 import javax.annotation.Resource;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.TestRestTemplate;
@@ -45,7 +38,6 @@ import com.tieto.weather.model.rest.WeatherRESTResponse;
 public class WeatherControllerTest extends WeatherBaseTest {
 
     private static final String BASE_URL = "http://localhost:9999/";
-    private static final String GET_SUPPORTED_CITIES_URL = "weather";
     private static final String GET_CITY_URL = "weather/rest/";
 
 	private MockRestServiceServer mockServer;
@@ -167,12 +159,5 @@ public class WeatherControllerTest extends WeatherBaseTest {
 		
 		mockServer.verify();
 	}
-	
-	
-	
-	@Test
-    @Ignore("Can be enabled once WeatherController is implemented.")
-    public void getWeaterAllCities() {
-    }
 	
 }

@@ -34,49 +34,11 @@ repositories {
     maven { url "https://repo.spring.io/milestone" }
 }
 
-task genJaxb {
-    ext.sourcesDir = "${buildDir}/generated-sources/jaxb"
-    ext.classesDir = "${buildDir}/classes/jaxb"
-    ext.schema = "src/main/resources/schema/WeatherObservations2.xsd"
-
-    outputs.dir classesDir
-
-    doLast() {
-        project.ant {
-            taskdef name: "xjc", classname: "com.sun.tools.xjc.XJCTask",
-                    classpath: configurations.jaxb.asPath
-            mkdir(dir: sourcesDir)
-            mkdir(dir: classesDir)
-
-            xjc(destdir: sourcesDir, schema: schema) {
-                arg(value: "-wsdl")
-                produces(dir: sourcesDir, includes: "**/*.java")
-            }
-
-            javac(destdir: classesDir, source: 1.6, target: 1.6, debug: true,
-                    debugLevel: "lines,vars,source",
-                    classpath: configurations.jaxb.asPath) {
-                src(path: sourcesDir)
-                include(name: "**/*.java")
-                include(name: "*.java")
-            }
-
-            copy(todir: classesDir) {
-                fileset(dir: sourcesDir, erroronmissingdir: false) {
-                    exclude(name: "**/*.java")
-                }
-            }
-        }
-    }
-}
-
-
 dependencies {
 
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-aop")
     compile("org.springframework.boot:spring-boot-starter-cache")
-    compile("org.springframework.boot:spring-boot-starter-hateoas")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-ws")
 	compile("org.springframework.boot:spring-boot-starter-security")    
@@ -87,7 +49,6 @@ dependencies {
     jaxb("com.sun.xml.bind:jaxb-xjc:2.2.7-b41")
     jaxb("com.sun.xml.bind:jaxb-impl:2.2.7-b41")
     jaxb("javax.xml.bind:jaxb-api:2.2.7")
-    compile(files(genJaxb.classesDir).builtBy(genJaxb))
     testCompile("org.springframework.boot:spring-boot-starter-test") 
 }
 

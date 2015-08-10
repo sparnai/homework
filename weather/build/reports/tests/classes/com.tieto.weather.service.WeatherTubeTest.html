@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2015-08-07 11:45:31.358  INFO 7528 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2015-08-07 11:45:31.358  INFO 7528 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@43cbf15b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@29d56d8a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@263fba83, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4ef22211, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@522f53bd]
+<pre>2015-08-10 08:09:47.699  INFO 5336 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-08-10 08:09:47.700  INFO 5336 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@778d0171, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@428cc5da, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3114b1c0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6b526d65, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@74cb6ff7]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -98,31 +98,30 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::             (v1.3.0.M2)
 
-2015-08-07 11:45:31.398  INFO 7528 --- [    Test worker] c.tieto.weather.service.WeatherTubeTest  : Starting WeatherTubeTest on Pantera with PID 7528 (D:\GitRepository\weather\build\classes\test started by Inspiron in D:\GitRepository\weather)
-2015-08-07 11:45:31.398  INFO 7528 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@140fe15e: startup date [Fri Aug 07 11:45:31 EEST 2015]; root of context hierarchy
-2015-08-07 11:45:31.738  INFO 7528 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'weatherSOAPConfiguration' of type [class com.tieto.weather.configuration.WeatherSOAPConfiguration$$EnhancerBySpringCGLIB$$bdd0d3f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2015-08-07 11:45:31.738  INFO 7528 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$de654b2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2015-08-07 11:45:31.748  INFO 7528 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2015-08-07 11:45:31.838  INFO 7528 --- [    Test worker] c.t.w.s.repository.WeatherCitiesImpl     : Initialize supported cities
-2015-08-07 11:45:31.848  INFO 7528 --- [    Test worker] o.s.oxm.jaxb.Jaxb2Marshaller             : Creating JAXBContext with context path [com.tieto.weather.model.soap]
-2015-08-07 11:45:31.878  INFO 7528 --- [    Test worker] o.s.oxm.jaxb.Jaxb2Marshaller             : Creating JAXBContext with context path [com.tieto.weather.model.soap]
-2015-08-07 11:45:31.898  INFO 7528 --- [    Test worker] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2015-08-07 11:45:32.258  INFO 7528 --- [    Test worker] c.tieto.weather.service.WeatherTubeTest  : Started WeatherTubeTest in 0.89 seconds (JVM running for 9.519)
-2015-08-07 11:45:32.268  INFO 7528 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube found that VILNIUS is supported. Trying to get observation from cache.
-2015-08-07 11:45:32.268  INFO 7528 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube found that VILNIUS is not supported or not cached. Trying to get observation external client.
-2015-08-07 11:45:32.268  INFO 7528 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Trying to get data from external source for city - VILNIUS
-2015-08-07 11:45:32.278  INFO 7528 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : 'Advicing' VILNIUS city. Counting popularity.
-2015-08-07 11:45:32.278  INFO 7528 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube got weather observation from external client - weather - Clear
-2015-08-07 11:45:32.278  INFO 7528 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube found that VILNIUS is supported. Trying to get observation from cache.
-2015-08-07 11:45:32.278  INFO 7528 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube succeded to get VILNIUS weather observation from cache.
-2015-08-07 11:45:32.278  INFO 7528 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@140fe15e: startup date [Fri Aug 07 11:45:31 EEST 2015]; root of context hierarchy
+2015-08-10 08:09:47.739  INFO 5336 --- [    Test worker] c.tieto.weather.service.WeatherTubeTest  : Starting WeatherTubeTest on Pantera with PID 5336 (D:\GitRepository\weather\build\classes\test started by Inspiron in D:\GitRepository\weather)
+2015-08-10 08:09:47.741  INFO 5336 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3c63f0d8: startup date [Mon Aug 10 08:09:47 EEST 2015]; root of context hierarchy
+2015-08-10 08:09:48.088  INFO 5336 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'weatherSOAPConfiguration' of type [class com.tieto.weather.configuration.WeatherSOAPConfiguration$$EnhancerBySpringCGLIB$$626f1556] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-10 08:09:48.088  INFO 5336 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b2849617] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-10 08:09:48.095  INFO 5336 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2015-08-10 08:09:48.193  INFO 5336 --- [    Test worker] c.t.w.s.repository.WeatherCitiesImpl     : Initialize supported cities
+2015-08-10 08:09:48.205  INFO 5336 --- [    Test worker] o.s.oxm.jaxb.Jaxb2Marshaller             : Creating JAXBContext with context path [com.tieto.weather.model.soap]
+2015-08-10 08:09:48.227  INFO 5336 --- [    Test worker] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2015-08-10 08:09:48.663  INFO 5336 --- [    Test worker] c.tieto.weather.service.WeatherTubeTest  : Started WeatherTubeTest in 0.957 seconds (JVM running for 11.539)
+2015-08-10 08:09:48.666  INFO 5336 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube found that VILNIUS is supported. Trying to get observation from cache.
+2015-08-10 08:09:48.667  INFO 5336 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube found that VILNIUS is not supported or not cached. Trying to get observation external client.
+2015-08-10 08:09:48.668  INFO 5336 --- [    Test worker] c.t.w.client.WeatherUndergroundClient    : Trying to get data from external source for city - VILNIUS
+2015-08-10 08:09:48.673  INFO 5336 --- [    Test worker] c.t.w.tracker.WeatherTrackerAspect       : 'Advicing' VILNIUS city. Counting popularity.
+2015-08-10 08:09:48.673  INFO 5336 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube got weather observation from external client - weather - Clear
+2015-08-10 08:09:48.675  INFO 5336 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube found that VILNIUS is supported. Trying to get observation from cache.
+2015-08-10 08:09:48.676  INFO 5336 --- [    Test worker] com.tieto.weather.service.WeatherTube    : WeatherTube succeded to get VILNIUS weather observation from cache.
+2015-08-10 08:09:48.676  INFO 5336 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@3c63f0d8: startup date [Mon Aug 10 08:09:47 EEST 2015]; root of context hierarchy
 </pre>
 </span>
 </div>
 </div>
 <div id="footer">
 <p>Generated by 
-<a href="http://www.gradle.org">Gradle 2.2.1</a> at Aug 7, 2015 11:45:35 AM</p>
+<a href="http://www.gradle.org">Gradle 2.2.1</a> at Aug 10, 2015 8:09:51 AM</p>
 </div>
 </div>
 </body>

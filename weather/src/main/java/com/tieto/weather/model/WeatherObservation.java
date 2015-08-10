@@ -30,8 +30,8 @@ public abstract class WeatherObservation {
     
     public abstract String getTime();
     public abstract void setTime(String time);
-    
-    public boolean isEmpty () {
+
+    public boolean isEmpty() {
     	return 
     		(getLocation() == null) &&
     		(getWindDirection() == null) &&

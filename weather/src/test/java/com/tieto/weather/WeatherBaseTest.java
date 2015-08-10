@@ -20,9 +20,16 @@ import com.tieto.weather.model.WeatherObservation;
 @DirtiesContext
 public abstract class WeatherBaseTest {
 	
-	protected final String USER_NAME = "weather";
-	protected final String PASS_WORD = "w34th3r";
-	
+	public final static String USER_NAME = "weather";
+	public final static String PASS_WORD = "w34th3r";
+
+	public static String encodeCredentials (final String username, final String password) {
+		String plainCredentials = username + ":" + password;
+    	byte[] plainCredentialsInBytes = plainCredentials.getBytes();
+    	byte[] base64CredentialsInBytes = Base64.getEncoder().encode(plainCredentialsInBytes);
+    	return new String(base64CredentialsInBytes);	
+	}
+
 	protected final String MOCK_CLIENT_RESPONSE_VILNIUS = "WeatherUndergroundResponse.json";
 	protected final String MOCK_CLIENT_RESPONSE_HELSINKI = "WeatherUndergroundResponseHelsinki.json";
 	protected final String MOCK_CLIENT_RESPONSE_TALLINN = "WeatherUndergroundResponseTallinn.json";
@@ -30,12 +37,6 @@ public abstract class WeatherBaseTest {
 	protected final String MOCK_CLIENT_RESPONSE_BAD_CITY = "WeatherUndergroundBadCityResponse.json";
 	protected final String MOCK_CLIENT_RESPONSE_STRANGE_CITY = "WeatherUndergroundStrangeCityResponse.json";
 	
-	protected String encodeCredentials (final String username, final String password) {
-		String plainCredentials = username + ":" + password;
-    	byte[] plainCredentialsInBytes = plainCredentials.getBytes();
-    	byte[] base64CredentialsInBytes = Base64.getEncoder().encode(plainCredentialsInBytes);
-    	return new String(base64CredentialsInBytes);	
-	}
 	
 	protected void checkMockVilniusObservation (WeatherObservation observation) {
 		assertEquals("Vilnius, Lithuania",  observation.getLocation());

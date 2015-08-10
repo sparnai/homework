@@ -3,7 +3,9 @@
  */
 package com.tieto.weather.model.rest;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.tieto.weather.model.WeatherObservation;
 
@@ -13,15 +15,22 @@ import com.tieto.weather.model.WeatherObservation;
  * 
  */
 @JsonRootName(value = "observation")
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties("empty")
 public class WeatherRESTObservation extends WeatherObservation {
 
+	@JsonProperty(value = "location")
 	protected String location;
+	@JsonProperty(value = "temperature")
     protected String temperature;
+	@JsonProperty(value = "humidity")
     protected String humidity;
+	@JsonProperty(value = "weather")
     protected String weather;
+	@JsonProperty(value = "windDirection")
     protected String windDirection;
+	@JsonProperty(value = "wind")
     protected String wind;
+	@JsonProperty(value = "time")
     protected String time;
 	
 	public WeatherRESTObservation() {

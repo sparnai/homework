@@ -233,5 +233,5 @@ public class WeatherObservationType extends WeatherObservation {
 	public void setTime(String time) {
 		this.time = time;
 	}
-
+    
 }

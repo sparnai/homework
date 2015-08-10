@@ -6,8 +6,6 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withNoContent;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.util.Optional;
 
 import javax.annotation.Resource;
@@ -26,7 +24,6 @@ import org.springframework.test.web.client.ResponseActions;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
-import org.springframework.ws.transport.http.HttpUrlConnectionMessageSender;
 
 import com.tieto.weather.WeatherBaseTest;
 import com.tieto.weather.client.WeatherProviderClient;
@@ -37,7 +34,7 @@ import com.tieto.weather.model.soap.*;
 
 public class WeatherEndpointTest extends WeatherBaseTest {
 
-	private static final String BASE_URL = "http://localhost:9999/ws";
+	public static final String BASE_URL = "http://localhost:9999/ws";
 
 	private MockRestServiceServer mockServer;
 	
@@ -56,7 +53,7 @@ public class WeatherEndpointTest extends WeatherBaseTest {
 	private ResponseActions mockServer(String city) {
 		return mockServer.expect(requestTo(WeatherProviderClient.WUNDERGROUND_URL + city.toUpperCase() + ".json")).andExpect(method(HttpMethod.GET));
 	}
-
+	
 	@Before
 	public void setUp() {
 		//create a mock Server instance for RestTemplate
@@ -69,18 +66,6 @@ public class WeatherEndpointTest extends WeatherBaseTest {
 			request.getCity().add(testCity);
 		else
 			request.getCity();
-		
-		webServiceTemplate.setDefaultUri(BASE_URL);
-		webServiceTemplate.setMarshaller(marshaller);
-		webServiceTemplate.setUnmarshaller(unmarshaller);
-		
-		webServiceTemplate.setMessageSender(new HttpUrlConnectionMessageSender() {
-			@Override
-			protected void prepareConnection(HttpURLConnection connection) throws IOException {
-				connection.setRequestProperty("Authorization", "Basic " + encodeCredentials (USER_NAME, PASS_WORD));
-				super.prepareConnection(connection);
-			}			
-		});
 		
 		return (WeatherSOAPResponse) webServiceTemplate.marshalSendAndReceive(request, new SoapActionCallback(BASE_URL));
 	}
@@ -167,5 +152,4 @@ public class WeatherEndpointTest extends WeatherBaseTest {
 		mockServer.verify();
 	}
 	
-
 }
